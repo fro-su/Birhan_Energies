@@ -5,7 +5,7 @@ import numpy as np
 from datetime import timedelta
 from scipy import stats
 
-data_path = '../../data/copy of BrentOilPrices.csv'
+data_path = '../../data/BrentOilPrices.csv'
 
 def load_price_data():
     data = pd.read_csv(data_path, parse_dates=['Date'])
@@ -107,7 +107,6 @@ def calculate_price_distribution(data, bin_size=5):
     # Format the distribution for visualization
     distribution['PriceRange'] = distribution['PriceRange'].astype(str)  # Convert bins to string for better visualization
     return distribution.to_dict(orient='records')  # Return as a list of dictionaries
-
 
 def calculate_yearly_average_price(data):
     yearly_avg = data['Price'].resample('YE').mean()

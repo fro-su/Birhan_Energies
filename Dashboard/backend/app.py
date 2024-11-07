@@ -81,6 +81,7 @@ def get_distribution():
         analysis_results = calculate_price_distribution(price_data)
         return jsonify(analysis_results)
     except Exception as e:
-        return jsonify({'error': str(e)}), 500  # Internal Server Error    
+        return jsonify({'error': str(e)}), 500  # Internal Server Error 
+       
 if __name__ == '__main__':
     app.run(debug=True)
